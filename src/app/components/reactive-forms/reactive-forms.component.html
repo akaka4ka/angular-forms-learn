@@ -1,0 +1,23 @@
+<div class="container">
+    <form [formGroup]="reactiveFormGroup">
+        <div>
+            <label for="username">Username:</label>
+            <input name="username" type="text" formControlName="username"/>
+        </div>
+
+        <div>
+            <label for="age">Age:</label>
+            <input name="age" type="number" formControlName="age"/>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input name="email" type="email" formControlName="email"/>
+        </div>
+
+        <div class="log-area_container">
+            <label for="logArea">Log: </label>
+            <textarea #logArea class="log-area" disabled>{{ reactiveFormGroup.value | json }}</textarea>
+        </div>
+    </form>
+</div>

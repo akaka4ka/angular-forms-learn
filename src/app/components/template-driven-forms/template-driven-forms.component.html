@@ -1,0 +1,31 @@
+<div class="one-input_ngmodel">
+    <strong>One input ngModel:</strong><br/>
+    <input type="text" (input)="logOneInputValue()" [(ngModel)]="oneInputModel"/>
+    <button class="one-input_reset-button" (click)="resetOneInput()">Set "Hello, World"</button>
+</div>
+
+<div class="several-input_ngmodel">
+    <strong>Several inputs ngModel:</strong>
+
+    <div>
+        <label for="username">Username:</label>
+        <input #usernameInput name="username" type="text" (input)="logSeveralInputValue(usernameInput.name, usernameInput.value)" [(ngModel)]="user.name"/>
+    </div>
+
+    <div>
+        <label for="age">Age:</label>
+        <input #ageInput name="age" type="number" (input)="logSeveralInputValue(ageInput.name, ageInput.value)" [(ngModel)]="user.age"/>
+    </div>
+
+    <div>
+        <label for="company">Company:</label>
+        <input #companyInput name="company" type="text" (input)="logSeveralInputValue(companyInput.name, companyInput.value)" [(ngModel)]="user.company"/>
+    </div>
+    
+    <button class="several-inputs_reset-button" (click)="logUserObject(logArea)">Log user object</button>
+
+    <div class="log-area_container">
+        <label for="logArea">Log: </label>
+        <textarea #logArea class="log-area" disabled></textarea>
+    </div>
+</div>
